@@ -1,0 +1,21 @@
+{
+  "ngApp": "sloth",
+  "sources": {
+    "path": "src/",
+    "template": "src/**/*.jade",
+    "script": "src/**/*.js",
+    "style": "src/**/*.styl",
+    "image": "src/**/*.{png,svg,jpg,jpeg}"
+  },
+  "libs": {
+    "style": [
+      "node_modules/bootstrap/dist/css/bootstrap.min.*"
+    ]
+  },
+  "build": {
+    "path": "public_html",
+    "script": "public_html/js",
+    "style": "public_html/css",
+    "image": "public_html/img"
+  }
+}
