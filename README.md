@@ -2,7 +2,7 @@
 
 This Project uses `browserify` and `gulp` to bundle the angular application and give it a node-like modularity, Typescript is a good tool but I am fan of it.
 
-This initial application includes twitter bootstrap4, tether and jquery. 
+This initial application also includes twitter `bootstrap4`, `tether` and `jquery`. 
 
 ## Usage
 
