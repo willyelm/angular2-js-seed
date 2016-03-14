@@ -8,6 +8,6 @@ var AppComponent = require('./app/seed-app');
 
 ngCore.enableProdMode();
 
-ngBrowser
+module.exports = ngBrowser
   .bootstrap(AppComponent)
   .catch(err => log.error(err));

@@ -26,6 +26,7 @@ var options = assign({}, watchify.args, {
     path.join(__dirname, '../', 'node_modules', 'zone.js', 'dist'),
     path.join(__dirname, '../', 'node_modules', 'angular2')
   ],
+  ignore: /\-spec\.js/,
   debug: argv.debug || false
 });
 
@@ -37,15 +38,6 @@ if(!argv.c){
   b = browserify(options);
 }
 
-// b.on('transform', function(tr) {
-//   if (tr instanceof babelify) {
-//     tr.once('babelify', function(result, filename) {
-//       console.log(filename);
-//     });
-//   }
-// });
-
-//b.add(es6ify.runtime);
 b.transform(es6ify);
 
 function bundle(){
@@ -71,7 +63,6 @@ if(!argv.c){
 
 b.on('log', gutil.log);
 b.on('error', gutil.log);
-// b.on('file', gutil.log);
 
 gulp.task('scripts', ['styles'], () => {
   return bundle();

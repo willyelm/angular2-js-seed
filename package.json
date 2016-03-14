@@ -21,7 +21,9 @@
     "prestart": "npm run reset",
     "start": "gulp develop",
     "prebuild": "npm run reset",
-    "build": "gulp build -c --debug false"
+    "build": "gulp build -c --debug false",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.9",
@@ -38,19 +40,24 @@
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
-    "watchify": "^3.7.0",
-    "es6ify": "^1.6.0",
     "del": "^2.2.0",
+    "es6ify": "^1.6.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-jade": "^1.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-stylus": "^2.3.0",
     "gulp-uglify": "^1.5.3",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.2",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
     "merge-stream": "^1.0.0",
     "through2": "^2.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0",
     "yargs": "^4.2.0"
   }
 }
