@@ -1,5 +1,6 @@
 language: node_js
 node_js:
-  - '4.4.0'
+  - '5.8.0'
 script:
+  - npm run build
   - npm run single-test
