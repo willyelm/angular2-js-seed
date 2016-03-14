@@ -10,7 +10,8 @@ module.exports = function(karma){
     files : [
       `${config.sources.path}/polyfills.js`,
       `${config.sources.path}/vendor.js`,
-      `${config.sources.path}/**/*-spec.js`,
+      `${config.sources.path}/app-spec.js`, //Initial Config Spec
+      `${config.sources.path}/**/*-spec.js`, //All Other Specs
       {
         pattern: `${config.build.path}/**/*.html`,
         included: false,

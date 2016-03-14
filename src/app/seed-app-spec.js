@@ -1,14 +1,9 @@
 'use strict';
 
 const ng = require('angular2/testing');
-const ngBrowser = require('angular2/platform/testing/browser');
 const $ = require('jquery');
 
 const AppComponent = require('./seed-app');
-
-ng.setBaseTestProviders(
-  ngBrowser.TEST_BROWSER_PLATFORM_PROVIDERS,
-  ngBrowser.TEST_BROWSER_APPLICATION_PROVIDERS);
 
 describe('SeedApp Component: can start', () => {
 
