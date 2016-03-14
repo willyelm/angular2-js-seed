@@ -5,6 +5,17 @@
   "description": "A Node-like Angular 2 seed application using browserify, gulp and browser-sync",
   "repository": "https://github.com/willyelm/angular2-seed",
   "license": "MIT",
+  "keywords": [
+    "Angular2",
+    "angular2-seed",
+    "browserify",
+    "javasscript",
+    "nodejs",
+    "node",
+    "es6",
+    "willyelm",
+    "gulp"
+  ],
   "scripts": {
     "reset": "npm install && gulp clear",
     "prestart": "npm run reset",
