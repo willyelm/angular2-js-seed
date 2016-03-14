@@ -2,6 +2,7 @@
 
 const config = require('./tasks/config');
 const path = require('path');
+const argv = require('yargs').argv;
 
 module.exports = function(karma){
 
@@ -36,9 +37,13 @@ module.exports = function(karma){
     },
     autoWatch : true,
     frameworks: ['browserify', 'jasmine'],
-    browsers : ['Chrome'],
+    browsers : [ argv.browser || 'Chrome'],
+    phantomjsLauncher: {
+      exitOnResourceError: true
+    },
     plugins : [
       'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-browserify'
     ]
