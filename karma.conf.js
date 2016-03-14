@@ -23,8 +23,8 @@ module.exports = function(karma){
       }
     ],
     proxies: {
-      '/app/': path.join(__dirname, config.build.path, 'app'),
-      '/css/': path.join(__dirname, config.build.path, 'css')
+      '/app/': path.join(__dirname, config.build.path, 'app/'),
+      '/css/': path.join(__dirname, config.build.path, 'css/')
     },
     preprocessors: {
       'src/**/*.js': [ 'browserify' ]
