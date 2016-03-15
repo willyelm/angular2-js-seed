@@ -22,3 +22,5 @@ To just compile a compressed version of the application without dev server, run 
 ```lang:bash
 npm run build
 ```
+
+
