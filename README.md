@@ -52,5 +52,5 @@ npm test
 run it once:
 
 ```bash
-npm test-once
+npm run test-once
 ```
