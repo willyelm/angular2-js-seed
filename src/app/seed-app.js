@@ -1,16 +1,17 @@
-'use strict';
+'use strict'
 
-const ngCore = require('angular2/core');
-const VersionComponent = require('./components/version/version.js');
+import {Component} from 'angular2/core'
+import {Version} from './components/version/version'
 
-module.exports = ngCore
-  .Component({
-    selector: 'my-app',
-    templateUrl: 'app/seed-app.html',
-    directives: [VersionComponent]
-  })
-  .Class({
-    constructor() {
-      this.title = 'Hello World';
-    }
-  });
+@Component({
+  selector: 'my-app',
+  templateUrl: 'app/seed-app.html',
+  directives: [Version]
+})
+
+export class SeedApp {
+
+  constructor () {
+    this.title = 'Hello World'
+  }
+}

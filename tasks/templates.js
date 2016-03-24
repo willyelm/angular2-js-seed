@@ -5,7 +5,7 @@ const jade = require('gulp-jade');
 const config = require('./config');
 const sync = require('./sync');
 
-gulp.task('templates', function() {
+gulp.task('templates', ['scripts'], function() {
 
   return gulp
     .src(config.sources.template)

@@ -1,7 +1,4 @@
-window.jQuery = require('jquery');
-window.Tether = require('tether');
-require('bootstrap');
-// require('angular2/platform/browser');
-// require('angular2/core');
-// require('angular2/http');
-// require('angular2/router');
+// Vendor scripts
+window.jQuery = require('jquery') //  jQuery is required by bootstrap
+window.Tether = require('tether') //  required by bootstrap
+require('bootstrap') // importing bootstrap

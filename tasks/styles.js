@@ -1,11 +1,12 @@
 'use strict';
 
 const gulp = require('gulp');
-const stylus = require('gulp-stylus');
+const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const merge = require('merge-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const config = require('./config');
+const gutil = require('gulp-util');
 const sync = require('./sync');
 
 gulp.task('styles', () => {
@@ -13,7 +14,7 @@ gulp.task('styles', () => {
   var styles = gulp
     .src(config.sources.style)
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(stylus())
+    .pipe(sass().on('error', gutil.log))
     .pipe(concat('app.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.build.style))

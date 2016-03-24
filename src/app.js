@@ -1,13 +1,14 @@
-'use strict';
+'use strict'
 
-const ngBrowser = require('angular2/platform/browser');
-const ngCore = require('angular2/core');
-const log = require('console');
+import {bootstrap} from 'angular2/platform/browser'
+// import {enableProdMode} from 'angular2/core';
+import {HTTP_PROVIDERS} from 'angular2/http'
+import {SeedApp} from './app/seed-app'
+import log from 'console'
 
-var AppComponent = require('./app/seed-app');
+// enableProdMode();
 
-ngCore.enableProdMode();
-
-module.exports = ngBrowser
-  .bootstrap(AppComponent)
-  .catch(err => log.error(err));
+module.exports = bootstrap(SeedApp, [
+  HTTP_PROVIDERS
+])
+.catch(err => log.error(err))

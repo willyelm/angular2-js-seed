@@ -4,7 +4,7 @@
     "path": "src/",
     "template": "src/**/*.jade",
     "script": "src/**/*.js",
-    "style": "src/**/*.styl",
+    "style": "src/**/*.scss",
     "image": "src/**/*.{png,svg,jpg,jpeg}"
   },
   "libs": {

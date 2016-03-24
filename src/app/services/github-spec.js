@@ -10,13 +10,11 @@ import {
 import {
   it,
   beforeEachProviders,
-  injectAsync,
-  TestComponentBuilder
+  injectAsync
 } from 'angular2/testing';
 import {Github} from 'app/services/github';
-import {Version} from './version';
 
-describe('Version Component', () => {
+describe('Github Service', () => {
 
   beforeEachProviders(() => {
     return [
@@ -26,27 +24,27 @@ describe('Version Component', () => {
     ];
   });
 
-  it('should render version number',
-    injectAsync([XHRBackend, TestComponentBuilder],
-      (backend, builder) => {
+  it('should return version from service',
+    injectAsync([Github, XHRBackend],
+      (github, backend) => {
 
         backend.connections.subscribe(connection => {
 
           connection.mockRespond(new Response({
             body: {
-              version: '1.0.0'
+              version: '1.5.0'
             }
           }));
         });
 
-        return builder
-          .createAsync(Version)
-          .then((fixture) => {
+        return new Promise((pass, fail) => {
 
-            let element = fixture.debugElement.nativeElement;
-
-            fixture.detectChanges();
-            expect(element.innerHTML).toMatch(/version\: 1\.0\.0/);
-          });
+          github.version.subscribe(
+            ({version}) => {
+              expect(version).toBe('1.5.0');
+              pass();
+            },
+            err => fail(err));
+        });
       }));
 });

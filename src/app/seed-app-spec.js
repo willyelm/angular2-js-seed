@@ -1,37 +1,35 @@
-'use strict';
+'use strict'
 
-const ng = require('angular2/testing');
-const $ = require('jquery');
+import {
+  it,
+  describe,
+  expect,
+  injectAsync,
+  beforeEachProviders,
+  TestComponentBuilder
+} from 'angular2/testing'
 
-const AppComponent = require('./seed-app');
+import {HTTP_PROVIDERS} from 'angular2/http'
+import {SeedApp} from './seed-app'
 
-describe('SeedApp Component: can start', () => {
+describe('SeedApp Component', () => {
+  beforeEachProviders(() => {
+    return [
+      HTTP_PROVIDERS
+    ]
+  })
 
-  ng.it('should have a title', () => {
-
-    let app = new AppComponent();
-
-    expect(app.title).toEqual('Hello World');
-  });
-
-  ng.it('should include a page header element', ng.injectAsync([
-    ng.TestComponentBuilder
-  ], (tcb) => {
-
-    return tcb
-      //.overrideTemplate(AppComponent, '')
-      .createAsync(AppComponent)
+  it('should include a page header element', injectAsync([
+    TestComponentBuilder
+  ], (builder) => {
+    return builder
+      //  .overrideTemplate(AppComponent, '')
+      .createAsync(SeedApp)
       .then((fixture) => {
-
-        let compiled;
-        let header;
-
-        fixture.detectChanges();
-        compiled = fixture.debugElement.nativeElement;
-        // header = compiled.querySelector('.page-header').innerHTML;
-        header = $(compiled).find('.page-header');
-        expect(header.html()).toMatch(/Angular2 Seed/);
-      });
-  }));
-
-});
+        let element = fixture.debugElement.nativeElement
+        let header = element.querySelector('.page-header')
+        fixture.detectChanges()
+        expect(header.innerHTML).toMatch(/Angular2 Seed/)
+      })
+  }))
+})
