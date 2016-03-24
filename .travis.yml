@@ -4,4 +4,4 @@ node_js:
 script:
   - npm install
   - npm run build
-  - npm run single-test
+  - npm run test-once
