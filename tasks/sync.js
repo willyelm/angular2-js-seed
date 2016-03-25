@@ -1,3 +1,3 @@
-'use strict';
+'use strict'
 
-module.exports = require('browser-sync').create();
+module.exports = require('browser-sync').create()

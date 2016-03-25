@@ -1,8 +1,14 @@
 .container
-  .page-header.m-t-3
-    h1 Angular2 Seed 
-  p.lead
-    | {{ title }}: This is a Starter Application 
+  
+  .page-header.m-y-2
+    h1 {{ title }}
+  
+  nav.nav.nav-inline
+    a.nav-link([routerLink]="['./Home']") Home
+    a.nav-link([routerLink]="['./About']") About
+      
+main
+  router-outlet
 
 footer.footer
   .container

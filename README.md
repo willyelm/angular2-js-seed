@@ -37,7 +37,7 @@ To just compile a compressed version of the application without dev server,
 run the following command:
 
 ```bash
-npm run build
+npm run app:build
 ```
 
 ### Testing
@@ -52,5 +52,5 @@ npm test
 run it once:
 
 ```bash
-npm run test-once
+npm run test:single
 ```

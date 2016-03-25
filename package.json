@@ -1,19 +1,19 @@
 {
   "name": "angular2-seed",
   "private": true,
-  "version": "0.0.3",
-  "description": "Angular 2 seed application using ES6 Javasscript",
+  "version": "1.0.1",
+  "description": "Angular 2 starter application using ES6 Javasscript",
   "repository": "https://github.com/willyelm/angular2-seed",
   "license": "MIT",
   "keywords": [
-    "Angular2",
-    "angular2-seed",
+    "angular2",
+    "seed",
     "browserify",
-    "bootstrap4",
-    "javasscript",
+    "bootstrap",
+    "javascript",
     "nodejs",
-    "node",
     "es6",
+    "babel",
     "decorators",
     "willyelm",
     "gulp"
@@ -22,13 +22,13 @@
     "parser": "babel-eslint"
   },
   "scripts": {
-    "reset": "gulp clear",
-    "prestart": "npm run reset",
+    "preapp:build": "npm run app:reset",
+    "app:reset": "gulp clear",
+    "app:build": "gulp build -c --debug false",
+    "prestart": "npm run app:reset",
     "start": "gulp develop",
-    "prebuild": "npm run reset",
-    "build": "gulp build -c --debug false",
     "test": "standard src/**/*.js && karma start karma.conf.js",
-    "test-once": "npm test -- --single-run --browser PhantomJS"
+    "test:single": "npm test -- --single-run --browser PhantomJS"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.12",
@@ -61,8 +61,8 @@
     "karma": "^0.13.22",
     "karma-browserify": "^5.0.3",
     "karma-chrome-launcher": "^0.2.2",
-    "karma-phantomjs-launcher": "^1.0.0",
     "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.0",
     "merge-stream": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.6",
     "standard": "^6.0.8",

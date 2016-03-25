@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - '5.8.0'
+  - '5.9.1'
 script:
   - npm install
-  - npm run build
-  - npm run single-test
+  - npm run app:build
+  - npm run test:single

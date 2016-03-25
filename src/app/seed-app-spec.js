@@ -6,16 +6,34 @@ import {
   expect,
   injectAsync,
   beforeEachProviders,
-  TestComponentBuilder
+  TestComponentBuilder,
+  MockApplicationRef
 } from 'angular2/testing'
 
+import {
+  APP_BASE_HREF,
+  ROUTER_PROVIDERS,
+  ROUTER_PRIMARY_COMPONENT
+} from 'angular2/router'
+
+import {provide, ApplicationRef} from 'angular2/core'
 import {HTTP_PROVIDERS} from 'angular2/http'
-import {SeedApp} from './seed-app'
+import {SeedApp} from 'app/seed-app'
 
 describe('SeedApp Component', () => {
   beforeEachProviders(() => {
     return [
-      HTTP_PROVIDERS
+      HTTP_PROVIDERS,
+      ROUTER_PROVIDERS,
+      provide(ROUTER_PRIMARY_COMPONENT, {
+        useValue: SeedApp
+      }),
+      provide(APP_BASE_HREF, {
+        useValue: '/'
+      }),
+      provide(ApplicationRef, {
+        useClass: MockApplicationRef
+      })
     ]
   })
 
@@ -23,13 +41,13 @@ describe('SeedApp Component', () => {
     TestComponentBuilder
   ], (builder) => {
     return builder
-      //  .overrideTemplate(AppComponent, '')
+      //  .overrideTemplate(SeedApp, '')
       .createAsync(SeedApp)
       .then((fixture) => {
         let element = fixture.debugElement.nativeElement
         let header = element.querySelector('.page-header')
         fixture.detectChanges()
-        expect(header.innerHTML).toMatch(/Angular2 Seed/)
+        expect(header.innerHTML).toMatch(/My App/)
       })
   }))
 })
