@@ -2,6 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/willyelm/angular2-js-seed.svg?style=flat-square)](https://travis-ci.org/willyelm/angular2-js-seed)
 [![Standard](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com/)
+[![Gitter](https://img.shields.io/gitter/room/willyelm/angular2-js-seed.svg?style=flat-square)](https://gitter.im/willyelm/angular2-js-seed)
 
 This Project uses `browserify` and `gulp` to bundle the angular
 application and give it a node-like modularity, and `babel` to use `ES6`
