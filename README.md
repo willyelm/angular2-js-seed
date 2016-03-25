@@ -45,32 +45,32 @@ npm run app:build
 ```bash
 src
 ├── app
-│   ├── components    # All application specific modules
+│   ├── components                # All application specific modules
 │   │   ├── about
-│   │   │   ├── about-spec.js   # About unit test
-│   │   │   ├── about.jade  # About template
-│   │   │   └── index.js    # About module
+│   │   │   ├── about-spec.js     # About unit test
+│   │   │   ├── about.jade        # About template
+│   │   │   └── index.js          # About module
 │   │   ├── home
-│   │   │   ├── home-spec.js    # Home unit test
-│   │   │   ├── home.jade   # Home template
-│   │   │   └── index.js    # Home module
+│   │   │   ├── home-spec.js      # Home unit test
+│   │   │   ├── home.jade         # Home template
+│   │   │   └── index.js          # Home module
 │   │   └── version
-│   │       ├── index.js    # Version module
+│   │       ├── index.js          # Version module
 │   │       ├── version-spec.js   # Version unit test
-│   │       └── version.jade    # Version template
-│   ├── services    # All application shared services
-│   │   ├── github-spec.js    # Github unit test
-│   │   └── github.js   # Github service module
-│   ├── seed-app-spec.js  # Application unit test module
-│   ├── seed-app.jade   # Main application template
-│   └── seed-app.js   # Main application main module
-├── app-spec.js   # Bootstrap unit test config
-├── app.js    # Bootstrap main application
-├── app.scss    # Default stylesheet
+│   │       └── version.jade      # Version template
+│   ├── services                  # All application shared services
+│   │   ├── github-spec.js        # Github unit test
+│   │   └── github.js             # Github service module
+│   ├── seed-app-spec.js          # Application unit test module
+│   ├── seed-app.jade             # Main application template
+│   └── seed-app.js               # Main application main module
+├── app-spec.js                   # Bootstrap unit test config
+├── app.js                        # Bootstrap main application
+├── app.scss                      # Default stylesheet
 
-├── index.jade    # Default Index template
-├── polyfills.js    # Polyfills imports
-└── vendor.js   # Vendor imports
+├── index.jade                    # Default Index template
+├── polyfills.js                  # Polyfills imports
+└── vendor.js                     # Vendor imports
 ```
 
 ### Unit Tests
