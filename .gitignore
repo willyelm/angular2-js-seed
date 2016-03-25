@@ -1,6 +1,0 @@
-# exclude libraries
-node_modules
-public_html
-npm-debug*
-log/*.log
-.DS_Store
