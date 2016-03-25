@@ -6,7 +6,7 @@
 This Project uses `browserify` and `gulp` to bundle the angular
 application and give it a node-like modularity, and `babel` to use `ES6`
 great features, babel disabled the decorators experimental feature in the
-latest version but while they do that I am using [`babel-plugin-transform-decorators-legacy`](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy).
+latest version but while they add it back I am using [`babel-plugin-transform-decorators-legacy`](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy).
 So we end up with well modular application without **Typings**, Typescript
 is a good tool but I am fan of it.
 
