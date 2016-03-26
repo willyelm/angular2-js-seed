@@ -10,7 +10,6 @@ module.exports = function (karma) {
     files: [
       'dist/vendor.js',
       'node_modules/angular2/bundles/testing.dev.js',
-      'node_modules/angular2/bundles/testing.dev.js',
       'karma.shim.js',
       { pattern: 'dist/**/*.js', included: false, watched: false },
       { pattern: 'dist/**/*.html', included: false, watched: true },

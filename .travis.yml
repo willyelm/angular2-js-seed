@@ -3,6 +3,7 @@ node_js:
   - '5.9.1'
 script:
   - npm install
+  - npm run build
   - npm run test:single
 before_install:
  - export CHROME_BIN=/usr/bin/google-chrome
