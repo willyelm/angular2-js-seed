@@ -4,15 +4,16 @@
 [![Standard](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com/)
 [![Gitter](https://img.shields.io/gitter/room/willyelm/angular2-js-seed.svg?style=flat-square)](https://gitter.im/willyelm/angular2-js-seed)
 
-This Project uses `browserify` and `gulp` to bundle the angular
-application and give it a node-like modularity, and `babel` to use `ES6`
-great features, babel disabled the decorators experimental feature in the
-latest version but while they add it back I am using [`babel-plugin-transform-decorators-legacy`](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy).
-So we end up with well modular application without **Typings**, Typescript
-is a good tool but I am fan of it.
+This Project uses `Gulp` to bundle the application vendors, `SystemJS`
+to modularize the sources, and `Babel` to use `ES6` great features
 
-This initial application also includes `twitter bootstrap4`, `tether`
-and `jquery`.
+> `Babel` disabled the decorators experimental feature in the
+> latest version but while they add it back I am using  [`babel-plugin-transform-decorators-legacy`](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy).
+> So we end up with well modular application
+> without **Typings**, "Typescript is a good tool but I am fan of it."
+
+This initial application also includes `Twitter Bootstrap4`, `Tether`
+and `jQuery`.
 
 ## Getting Started
 
