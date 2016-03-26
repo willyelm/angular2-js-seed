@@ -11,7 +11,7 @@ latest version but while they add it back I am using [`babel-plugin-transform-de
 So we end up with well modular application without **Typings**, Typescript
 is a good tool but I am fan of it.
 
-This initial application also includes twitter `bootstrap4`, `tether`
+This initial application also includes `twitter bootstrap4`, `tether`
 and `jquery`.
 
 ## Getting Started
