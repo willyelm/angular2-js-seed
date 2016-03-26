@@ -1,5 +1,3 @@
-'use strict'
-
 import {provide} from 'angular2/core'
 import {MockBackend} from 'angular2/http/testing'
 import {ROUTER_PROVIDERS} from 'angular2/router'
@@ -20,7 +18,7 @@ import {
 } from 'angular2/testing'
 
 import {Github} from 'app/services/github'
-import {Version} from './index'
+import {Version} from './version'
 
 describe('Version Component', () => {
   beforeEachProviders(() => {

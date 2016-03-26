@@ -1,5 +1,3 @@
-'use strict'
-
 import {provide} from 'angular2/core'
 import {MockBackend} from 'angular2/http/testing'
 

@@ -1,5 +1,3 @@
-'use strict'
-
 import {
   it,
   describe,
@@ -8,7 +6,7 @@ import {
   TestComponentBuilder
 } from 'angular2/testing'
 
-import {About} from 'app/components/about'
+import {About} from './about'
 
 describe('About Component', () => {
   it('should include a header with "About" title', injectAsync([

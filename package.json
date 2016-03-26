@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp develop --env development --server true",
     "build": "gulp build --env production",
-    "test": "standard"
+    "test": "standard && karma start",
+    "test:single": "standard && karma start --single-run"
   },
   "author": "Williams Medina <williams.medinaa@gmail.com>",
   "license": "MIT",
@@ -28,8 +29,16 @@
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
+    "jasmine-core": "^2.4.1",
+    "jasmine-suite-reporter": "^1.0.7",
+    "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
     "merge-stream": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "standard": "^6.0.8",
+    "systemjs": "^0.19.24",
     "yargs": "^4.3.2"
   },
   "dependencies": {

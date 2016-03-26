@@ -81,8 +81,8 @@ karma for unit testing, run the following command to test both:
 npm test
 ```
 
-<!-- run it once:
+run it once:
 
 ```bash
 npm run test:single
-``` -->
+```

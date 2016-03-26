@@ -22,7 +22,10 @@
   },
   "path": "./dist",
   "sources": {
-    "scripts": "src/**/*.js",
+    "scripts": [
+      "!src/**/*-spec.js",
+      "src/**/*.js"
+    ],
     "templates": "src/**/*.jade",
     "styles": "src/**/*.scss"
   }
