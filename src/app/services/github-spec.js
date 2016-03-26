@@ -31,20 +31,20 @@ describe('Github Service', () => {
   it('should return version from service',
     injectAsync([Github, XHRBackend],
       (github, backend) => {
-        backend.connections.subscribe(connection => {
+        backend.connections.subscribe((connection) => {
           connection.mockRespond(new Response({
             body: {
               version: '1.5.0'
             }
           }))
         })
-        return new Promise((pass, fail) => {
+        return new Promise((resolve, reject) => {
           github.version.subscribe(
             ({version}) => {
               expect(version).toBe('1.5.0')
-              pass()
+              resolve()
             },
-            err => fail(err))
+            (err) => reject(err))
         })
       }))
 })

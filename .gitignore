@@ -1,6 +1,5 @@
-# exclude libraries
+# exclude paths
+dist
 node_modules
-public_html
 npm-debug*
-log/*.log
 .DS_Store

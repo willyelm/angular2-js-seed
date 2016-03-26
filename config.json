@@ -1,0 +1,29 @@
+{
+  "polyfills": [
+    "node_modules/systemjs/dist/system-polyfills.js",
+    "node_modules/angular2/bundles/angular2-polyfills.js"
+  ],
+  "vendor": {
+    "scripts": [
+      "node_modules/systemjs/dist/system.js",
+
+      "node_modules/rxjs/bundles/Rx.js",
+      "node_modules/angular2/bundles/angular2.js",
+      "node_modules/angular2/bundles/http.js",
+      "node_modules/angular2/bundles/router.js",
+
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/tether/dist/js/tether.js",
+      "node_modules/bootstrap/dist/js/bootstrap.js"
+    ],
+    "styles": [
+      "node_modules/bootstrap/dist/css/bootstrap.css"
+    ]
+  },
+  "path": "./dist",
+  "sources": {
+    "scripts": "src/**/*.js",
+    "templates": "src/**/*.jade",
+    "styles": "src/**/*.scss"
+  }
+}

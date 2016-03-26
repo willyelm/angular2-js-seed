@@ -3,16 +3,15 @@
 import {Component} from 'angular2/core'
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 
-import {Version} from 'app/components/version'
-import {Home} from 'app/components/home'
-import {About} from 'app/components/about'
+import {Version} from 'app/components/version/version'
+import {Home} from 'app/components/home/home'
+import {About} from 'app/components/about/about'
 
 @Component({
-  selector: 'my-app',
+  selector: 'seed-app',
   templateUrl: 'app/seed-app.html',
   directives: [Version, ROUTER_DIRECTIVES]
 })
-
 @RouteConfig([{
   path: '/home',
   component: Home,
@@ -23,9 +22,8 @@ import {About} from 'app/components/about'
   component: About,
   name: 'About'
 }])
-
 export class SeedApp {
   constructor () {
-    this.title = 'My App'
+    this.title = 'Seed Application'
   }
 }

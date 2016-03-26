@@ -8,10 +8,6 @@ import {Component} from 'angular2/core'
   directives: []
 })
 export class Home {
-
-  constructor() {}
-
-  ngOnInit() {
-
-  }
+  // constructor () {}
+  // ngOnInit () {}
 }

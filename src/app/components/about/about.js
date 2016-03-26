@@ -8,10 +8,6 @@ import {Component} from 'angular2/core'
   directives: []
 })
 export class About {
-
-  constructor() {}
-
-  ngOnInit() {
-
-  }
+  // constructor () {}
+  // ngOnInit () {}
 }

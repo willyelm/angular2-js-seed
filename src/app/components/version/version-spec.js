@@ -35,7 +35,7 @@ describe('Version Component', () => {
   it('should render version number',
     injectAsync([XHRBackend, TestComponentBuilder],
       (backend, builder) => {
-        backend.connections.subscribe(connection => {
+        backend.connections.subscribe((connection) => {
           connection.mockRespond(new Response({
             body: {
               version: '1.0.0'

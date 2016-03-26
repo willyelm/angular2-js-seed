@@ -25,20 +25,19 @@ npm install
 
 ### Usage
 
-and then to start the development server:
+and then to start the development server at [`http://localhost:3000`](http://localhost:3000):
 
 ```bash
 npm start
 ```
 
-then open this url:
-[`http://localhost:3000`](http://localhost:3000)
+> The port `3000` may change if it is already in use.
 
 To just compile a compressed version of the application without dev server,
 run the following command:
 
 ```bash
-npm run app:build
+npm run build
 ```
 
 ### Directory Layout
@@ -68,10 +67,8 @@ src
 ├── app-spec.js                   # Bootstrap unit test config
 ├── app.js                        # Bootstrap main application
 ├── app.scss                      # Default stylesheet
-
+├── bootstrap.js                  # SystemJS import app
 ├── index.jade                    # Default Index template
-├── polyfills.js                  # Polyfills imports
-└── vendor.js                     # Vendor imports
 ```
 
 ### Unit Tests
@@ -83,8 +80,8 @@ karma for unit testing, run the following command to test both:
 npm test
 ```
 
-run it once:
+<!-- run it once:
 
 ```bash
 npm run test:single
-```
+``` -->
