@@ -1,7 +1,5 @@
 'use strict'
 
-// const config = require('./config')
-// const path = require('path')
 const argv = require('yargs').argv
 
 module.exports = function (karma) {
@@ -11,7 +9,7 @@ module.exports = function (karma) {
       'dist/vendor.js',
       'node_modules/angular2/bundles/testing.dev.js',
       'karma.shim.js',
-      { pattern: 'dist/**/*.js', included: false, watched: false },
+      { pattern: 'dist/**/*.js', included: false, watched: true },
       { pattern: 'dist/**/*.html', included: false, watched: true },
       { pattern: 'src/**/*-spec.js', included: false, watched: true }
     ],
@@ -38,7 +36,6 @@ module.exports = function (karma) {
     reporters: ['suite'],
     plugins: [
       'karma-chrome-launcher',
-      'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-babel-preprocessor',
       'jasmine-suite-reporter/karma'

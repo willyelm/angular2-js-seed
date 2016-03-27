@@ -9,7 +9,7 @@ const jade = require('gulp-jade')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
-const config = require('./config')
+const config = require('./gulp.config')
 const sync = require('browser-sync')
 const merge = require('merge-stream')
 const sourcemaps = require('gulp-sourcemaps')
@@ -23,55 +23,64 @@ const argv = require('yargs')
 // compress flag
 var compress = argv.env === 'production'
 // uglify settings
-function uglifier () {
+function uglifier (cb) {
   return uglify({
     mangle: false,
     comments: 'm/\/\/# sourceMappingURL.*?/g'
-  }).on('error', gutil.log)
-}
-// babel settings
-function babelifier () {
-  return babel({
-    comments: false,
-    presets: ['es2015'],
-    plugins: ['transform-decorators-legacy']
-  }).on('error', gutil.log)
+  }).on('error', (e) => {
+    gutil.log(e.stack)
+    cb()
+  })
 }
 
-function buildTemplate () {
+function buildTemplate (cb) {
   return gulp
     .src(config.sources.templates)
     .pipe(changed(config.path, { extension: '.html' }))
-    .pipe(jade())
+    .pipe(jade().on('error', (e) => {
+      gutil.log(e.stack)
+      cb()
+    }))
     .pipe(gulp.dest(config.path))
 }
 
-function buildStyle () {
+function buildStyle (cb) {
   return gulp
     .src(config.sources.styles, { extension: '.css' })
     .pipe(changed(config.path))
-    .pipe(sass())
+    .pipe(sass().on('error', (e) => {
+      gutil.log(e.stack)
+      cb()
+    }))
     .pipe(gulp.dest(config.path))
 }
 
-function buildScript () {
-  return gulp
+function buildScript (cb) {
+  var stream = gulp
     .src(config.sources.scripts)
     .pipe(changed(config.path))
     .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(babelifier())
-      .pipe(gulpIf(compress, uglifier()))
+      .pipe(babel({
+        comments: false,
+        presets: ['es2015'],
+        plugins: ['transform-decorators-legacy']
+      }).on('error', (e) => {
+        gutil.log(e.stack)
+        cb()
+      }))
+      .pipe(gulpIf(compress, uglifier(cb)))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.path))
+  return stream
 }
 
-function buildVendor () {
+function buildVendor (cb) {
   var js = gulp
     .src(config.polyfills.concat(config.vendor.scripts))
     .pipe(changed(config.path))
     .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(concat('vendor.js'))
-      .pipe(gulpIf(compress, uglifier()))
+      .pipe(gulpIf(compress, uglifier(cb)))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.path))
   var css = gulp
@@ -116,7 +125,6 @@ gulp.task('watch', ['build:style'], () => {
   gulp.watch(config.sources.styles, ['watch:style'])
   gulp.watch(config.sources.scripts, ['watch:script'])
   gulp.watch(config.polyfills.concat(config.vendor.scripts), ['watch:vendor'])
-
   gulp.watch(['gulpfile.js', 'config.json'], ['reload'])
 })
 

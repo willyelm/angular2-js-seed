@@ -15,13 +15,3 @@ Promise
   .catch((err) => {
     console.error(err)
   })
-
-// function coroutine (fn) {
-//   var gen = fn()
-//   function next (err, res) {
-//     var ret = gen.next(res)
-//     if (ret.done) return
-//     ret.value(next)
-//   }
-//   next()
-// }
