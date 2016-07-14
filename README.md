@@ -1,5 +1,7 @@
 # angular2-seed
 
+[![Join the chat at https://gitter.im/willyelm/angular2-js-seed](https://badges.gitter.im/willyelm/angular2-js-seed.svg)](https://gitter.im/willyelm/angular2-js-seed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Travis](https://img.shields.io/travis/willyelm/angular2-js-seed.svg?style=flat-square)](https://travis-ci.org/willyelm/angular2-js-seed)
 [![Standard](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com/)
 [![Gitter](https://img.shields.io/gitter/room/willyelm/angular2-js-seed.svg?style=flat-square)](https://gitter.im/willyelm/angular2-js-seed)
